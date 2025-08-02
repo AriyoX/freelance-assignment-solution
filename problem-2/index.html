@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Validator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Dynamic Form Validator</h1>
+        </div>
+
+        <div class="validation-summary" id="validationSummary">
+            <h3>Validation Results</h3>
+            <div id="summaryContent"></div>
+        </div>
+
+        <form id="dynamicForm" novalidate>
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" data-validate="firstName">
+                        <div class="error-message" id="firstNameError"></div>
+                        <div class="success-message" id="firstNameSuccess"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" data-validate="lastName">
+                        <div class="error-message" id="lastNameError"></div>
+                        <div class="success-message" id="lastNameSuccess"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Contact Information</h2>
+                <div class="validation-rules">
+                    <h3>Email Requirements:</h3>
+                    <ul>
+                        <li>Must be a valid email format</li>
+                        <li>Must contain @ symbol with valid domain</li>
+                        <li>Can include letters, numbers, dots, hyphens, and underscores</li>
+                        <li>Examples: user@example.com, john.doe@company.org, admin_123@test-site.net</li>
+                        <li>Required field</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" data-validate="email">
+                    <div class="error-message" id="emailError"></div>
+                    <div class="success-message" id="emailSuccess"></div>
+                </div>
+                
+                <div class="validation-rules">
+                    <h3>Phone Requirements:</h3>
+                    <ul>
+                        <li>Must be 7-15 digits (supports international formats)</li>
+                        <li>Can include country codes (e.g., +256, +81, ...)</li>
+                        <li>Can include +, -, (, ), and spaces</li>
+                        <li>Examples: +256 751 461 761, 0751461761, +1 234 567 8900</li>
+                        <li>Required field</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" data-validate="phone" placeholder="e.g., +256 751 461 761 or 0751461761">
+                    <div class="error-message" id="phoneError"></div>
+                    <div class="success-message" id="phoneSuccess"></div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Account Security</h2>
+                <div class="validation-rules">
+                    <h3>Password Requirements:</h3>
+                    <ul>
+                        <li>Minimum 8 characters</li>
+                        <li>At least one lowercase letter</li>
+                        <li>At least one uppercase letter</li>
+                        <li>At least one number</li>
+                        <li>At least one special character (!@#$%^&*)</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <div class="password-input-container">
+                        <input type="password" id="password" name="password" data-validate="password">
+                        <button type="button" class="password-toggle" id="passwordToggle">
+                            <i class="fas fa-eye" id="passwordToggleIcon"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                    <div class="success-message" id="passwordSuccess"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password *</label>
+                    <div class="password-input-container">
+                        <input type="password" id="confirmPassword" name="confirmPassword" data-validate="confirmPassword">
+                        <button type="button" class="password-toggle" id="confirmPasswordToggle">
+                            <i class="fas fa-eye" id="confirmPasswordToggleIcon"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="confirmPasswordError"></div>
+                    <div class="success-message" id="confirmPasswordSuccess"></div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Additional Information</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" data-validate="age" min="13" max="120">
+                        <div class="error-message" id="ageError"></div>
+                        <div class="success-message" id="ageSuccess"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website URL</label>
+                        <input type="url" id="website" name="website" data-validate="website" placeholder="https://example.com">
+                        <div class="error-message" id="websiteError"></div>
+                        <div class="success-message" id="websiteSuccess"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">Validate & Submit Form</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
