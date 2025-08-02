@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, rgb(3, 218, 247) 0%, rgb(233, 30, 250) 100%);
+    background-image:
+        linear-gradient(135deg, rgba(3, 218, 247, 0.9) 0%, rgba(233, 30, 250, 0.9) 100%),
+        url('https://www.transparenttextures.com/patterns/maze-black.png');
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px; 
+    text-align: center;
+}
+
+.login-container h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.social-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.social-btn .fab {
+    font-size: 1.1em;
+}
+
+.social-btn.facebook {
+    background-color: #3b5998;
+    color: white;
+}
+
+.social-btn.google {
+    background-color: #fff;
+    color: #444;
+    border: 1px solid #ddd;
+}
+
+#loginForm .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#loginForm label {
+    display: block;
+    margin-bottom: 5px; 
+    color: #888;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.password-label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px; 
+}
+
+.password-label-container label {
+    margin-bottom: 0;
+}
+
+a.forgot-link {
+    font-size: 0.8em;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a.forgot-link:hover {
+    color: #555;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: all 0.3s ease; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
+.password-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-container input {
+    padding-right: 45px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 1.1em;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+    color: #555;
+}
+
+.password-toggle:focus {
+    outline: none;
+    color: #3b5998;
+}
+
+#loginForm input:focus {
+    outline: none;
+    border-color: #3b5998;
+    box-shadow: 0 2px 8px rgba(59, 89, 152, 0.2); 
+    transform: translateY(-1px); 
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    margin-top: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.login-btn:hover {
+    background-color: #555;
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.signup-link {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.signup-link a {
+    color: #3b5998;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8em;
+    margin-top: 5px;
+    display: none;
+    text-align: left;
+}
+
+#loginForm input.error {
+    border-color: #e74c3c;
+}
